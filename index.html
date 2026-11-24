@@ -1,269 +1,195 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abhishek Sharma</title>
+<meta name="description" content="Abhishek Sharma, ML researcher. From cats and dogs to proteins and cells: a large-scale ML/AI perspective.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #fbfaf7; --surface: #ffffff; --ink: #1d2422; --muted: #5d6865;
+  --rule: #e2e0d9; --accent: #0b6b5d; --accent-soft: #e2f1ed;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #141817; --surface: #1c2220; --ink: #e9ece9; --muted: #a0aaa6;
+    --rule: #2e3633; --accent: #6fd0bd; --accent-soft: #1d3530;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #141817; --surface: #1c2220; --ink: #e9ece9; --muted: #a0aaa6;
+  --rule: #2e3633; --accent: #6fd0bd; --accent-soft: #1d3530;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.65 var(--sans); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.wrap { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/hidebib.js"></script>
+nav { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--rule); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
+.brand { font: 500 19px/1 var(--serif); color: var(--ink); }
+.brand:hover { text-decoration: none; }
+nav ul { display: flex; gap: 22px; margin: 0; padding: 0; list-style: none; font-size: 14px; }
+nav ul a { color: var(--muted); }
+nav ul a:hover { color: var(--ink); text-decoration: none; }
 
-<script type="text/javascript">
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 24px 72px; align-items: center; padding: 56px 0 48px; }
+h1 { margin: 0 0 20px; font: 400 clamp(38px, 6vw, 54px)/1.08 var(--serif); letter-spacing: -0.015em; }
+.hero-title { grid-column: 1 / -1; }
+.lede { margin: 0; font: 400 min(35px, calc((100vw - 48px) / 30.67))/1.2 var(--serif); white-space: nowrap; }
+.hero p.bio { margin: 0 0 24px; color: var(--muted); }
+.portrait { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.contact img { display: block; width: 26px; height: 26px; object-fit: contain; border-radius: 4px; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; margin: 0; padding: 0; list-style: none; font-size: 14px; font-weight: 500; }
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-40545479-1']);
-  _gaq.push(['_trackPageview']);
+section { padding: 40px 0; border-top: 1px solid var(--rule); scroll-margin-top: 56px; }
+h2 { margin: 0 0 28px; font: 400 30px/1.2 var(--serif); }
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+.news { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 
-</script>
+.line { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); gap: 0 16px; }
+.arrow { display: flex; align-items: center; justify-content: center; height: 220px; color: var(--accent); }
+.arrow svg { display: block; }
+.pub { min-width: 0; }
+.pub .thumb { margin-bottom: 14px; }
+.thumb { display: flex; align-items: center; justify-content: center; height: 220px; padding: 8px; background: #fff; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.thumb img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; }
+.thumb.empty { background: var(--accent-soft); border-color: transparent; color: var(--accent); font: italic 400 21px/1.2 var(--serif); text-align: center; }
+.line + .line { margin-top: 36px; }
+h4 { margin: 0 0 6px; font: 500 20px/1.3 var(--serif); }
+h4 a { color: var(--ink); }
+.venue { margin: 2px 0 10px; font-size: 14.5px; }
+.award { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 500; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 0; list-style: none; font-size: 14px; font-weight: 500; }
 
+footer { padding: 28px 0 40px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 13.5px; }
 
+@media (max-width: 720px) {
+  .wrap { padding: 0 16px; }
+  nav ul { gap: 16px; }
+  .hero { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 44px; }
+  .hero .photo { order: -1; width: 132px; }
+  .lede { font-size: 24px; line-height: 1.25; white-space: normal; }
+  .line { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .arrow { height: auto; }
+  .arrow svg { transform: rotate(90deg); }
+  .thumb { height: 170px; }
+}
+</style>
 </head>
-
 <body>
-  <div class="container">
-    <table width="900" border="0" align="center" cellpadding="20">
-      <table width="90%" align="center" border="0" cellpadding="10">
-        <tr>
-          <td width="70%" valign="top">
-            <p align="center">&nbsp;</p>
 
-            <p align="center"><font size="6px">Abhishek Sharma</font><br>
-            sharma@lix.polytechnique.fr</p>
-
-            <p> I am a senior research scientist at Illumina AI group at Cambridge, UK. I am very interested in alignment problems in general (images, text, 3D data or graphs) and their applications in biology following <a href="https://www.nature.com/articles/d41586-022-00997-5?utm_source=xmol&utm_medium=affiliate&utm_content=meta&utm_campaign=DDCN_1_GL01_metadata">.</a> <p>
-              I did my PhD at Ecole Polytechnique, IPP Paris and 
-             a Masters in <a href="https://www.master-mva.com/">Math, Vision and Learning</a> with a distinction. Before that, I was somewhat fortunate to be hired by Catherine at CNRS, Francois Fleuret at Idiap/EPFL, and Jean Ponce at INRIA/ENS. I got interested in Science while doing my Bachelors at CUSAT, India.
-            <p> <a href="https://www.linkedin.com/in/abhishek-s-86585746/" target="_blank" ><img src="icons/linkedin.png" height="26"></a> / 
-                <a href="https://scholar.google.com/citations?user=79KaxoIAAAAJ&hl=en" target="_blank"><img src="icons/google_scholar.png" height="26"></a> /
-                <a href="https://github.com/Not-IITian/" target="_blank" ><img src="icons/github_alt.png" height="26"></a> 
-            </p>
-          </td>
-          <td width="30%"><div class="instructorphoto"><img src="IMG_20191124_200119_037.jpg" id="georgia"></div></td>
-        </tr>
-      </table>
-    </table>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Abhishek Sharma</a>
+    <ul>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
   </div>
-  <br>
+</nav>
 
-  <div class="container">
-    <table width="90%" border="0" align="center" cellpadding="20">
-    <h2>News</h2>
-      <div class="news">
-        <ul>
-          <li><span> I will be one of the mentors at <a href="https://www.logml.ai"> London Geometry and Machine Learning School, 2022</a> </span></li>
-          <li><span> <a href="https://arxiv.org/abs/2102.03233"> Matrix Decomposition on graphs: a Functional view </a> accepted at ICASSP'22. </span></li>
-         <li><span> I gave an invited talk on 'Learning based correspondence' at <a href="https://sgi.mit.edu"> SGI'21</a> by MIT </span></li>
-         <li><span> <a href="https://hal.inria.fr/hal-02872053/"> Weakly Supervised Deep Functional Maps </a> accepted at Neurips'20. </span></li>
-         <li><span> We got <a href="http://cvpr2020.thecvf.com/node/817"> another best paper award Nomination </a>, this time at  CVPR 2020 ! Top 26 out of 6000 submissions</span></li>
-         <li><span> We got a <a href="https://drive.google.com/open?id=1BlfJhj8axuLPXfO9kqP7hW4JIiHFp8ki"> Best Paper Award Nomination</a> ( 7 out of 4000 +) at ICCV 2019.</span></li> 
-        <li><span> presented <a href="https://nips.cc/Conferences/2018/Schedule?showEvent=11183">Foreground Clustering at Neurips 2018 </a>.</span></li>
-        </ul>
-      </div>
-    </table>
+<main class="wrap" id="top">
+
+<header class="hero">
+  <div class="hero-title">
+    <h1>Abhishek Sharma</h1>
+    <p class="lede">From cats &amp; dogs to proteins &amp; cells: a large-scale ML/AI perspective</p>
   </div>
-  <br>
+  <div>
+    <p class="bio">I am an ML researcher currently focused on understanding how biological systems maintain their identity, respond to perturbations, and transition between states. I am particularly interested in cell reprogramming, with the long-term (optimistic) goal of applying it to cancer and brain diseases. An underlying theme of my ML research centres around simple unified frameworks, learning from constraints and weak supervision.</p>
+    <p class="bio">I did my PhD at Ecole Polytechnique and MS in <a href="https://www.master-mva.com/">Math, Vision and Learning</a>. I got interested in Science while doing my bachelor's at CUSAT, India.</p>
+    <ul class="contact">
+      <li><a href="mailto:kein.iitian@gmail.com">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=79KaxoIAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><img src="assets/img/icon_google_scholar.png" alt="" width="26" height="26"></a></li>
+      <li><a href="https://github.com/bach-zouk/" aria-label="GitHub" title="GitHub"><img src="assets/img/icon_github_alt.png" alt="" width="26" height="26"></a></li>
+      <li><a href="https://www.linkedin.com/in/abhishek-s-86585746/" aria-label="LinkedIn" title="LinkedIn"><img src="assets/img/icon_linkedin.png" alt="" width="26" height="26"></a></li>
+    </ul>
+  </div>
+  <div class="photo"><img class="portrait" src="assets/img/portrait.webp" alt="Portrait of Abhishek Sharma" width="520" height="520"></div>
+</header>
 
-  <div class="container">
-    <h2> Publications </h2>
-    
-     <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%"><img src="intro" alt="" width="180" height="140"></td>
-        <td width="75%" valign="top">
-          <p>
-            <a href="https://arxiv.org/abs/2102.03233"> <heading> Matrix Decomposition on Graphs: A Functional View</heading></a><br>
-              <strong> Abhishek Sharma</strong>, <a href="http://www.lix.polytechnique.fr/~maks//"> Maks Ovsjanikov</a><br> 
-          <em>ICASSP</em>, 2022 <br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://arxiv.org/abs/2102.03233">arxiv</a> /
-            <a href="https://github.com/Not-IITian/functional-matrix-completion"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{sharma2020,
-Title={Matrix Decomposition on Graphs: A Functional View},
-Author={Abhishek Sharma and Maks Ovsjanikov},
-Journal={ICASSP},
-Year={2022}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
-    </div>
-    <hr>
-    <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="cat_.pdf" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://arxiv.org/pdf/2009.13339.pdf"><heading>Weakly Supervised Deep Functional Maps for Shape Matching</heading></a><br>
-           <strong> Abhishek Sharma</strong>, <a href="http://www.lix.polytechnique.fr/~maks//"> Maks Ovsjanikov</a><br>
-          <em>NeurIPS</em>, 2020 <br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://arxiv.org/abs/2009.13339">arxiv</a> /
-            <a href="https://github.com/Not-IITian/Weakly-supervised-Deep-Functional-map"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{sharma2020,
-Title={Weakly Supervised Deep Functional Maps for Shape Matching},
-Author={Abhishek Sharma and Maks Ovsjanikov},
-Journal={NeurIPS},
-Year={2020}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
-    </div>
-    <hr>
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li>Invited talks at EMBL-EBI, Francis Crick Institute, LMB Cambridge and Randall Centre for molecular biophysics.</li>
+    <li>Mentor again at <a href="https://www.logml.ai/logml2024/projects2024/project1/">London Geometry and ML School 2024</a>, after <a href="https://www.logml.ai/logml2022/projects.html">LoGML 2022</a>.</li>
+    <li>Invited talk on &lsquo;Learning based correspondence&rsquo; at <a href="https://sgi.mit.edu">SGI'21</a> by MIT.</li>
+    <li>Best Paper Award Nominations at <a href="https://drive.google.com/open?id=1BlfJhj8axuLPXfO9kqP7hW4JIiHFp8ki">ICCV 2019</a> (7 out of 4000+) and <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Donati_Deep_Geometric_Functional_Maps_Robust_Feature_Learning_for_Shape_Correspondence_CVPR_2020_paper.html">CVPR 2020</a> (26 out of 6000 submissions).</li>
+  </ul>
+</section>
 
-    <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="TEASER.pdf" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Donati_Deep_Geometric_Functional_Maps_Robust_Feature_Learning_for_Shape_Correspondence_CVPR_2020_paper.pdf"><heading>Deep geometric functional maps: Robust feature learning for shape correspondence</heading></a><br>
-           <a href="https://scholar.google.com/citations?user=bX8aHNEAAAAJ&hl=en&oi=sra/"> Nicolas Donati</a>, <strong> Abhishek Sharma</strong>, <a href="http://www.lix.polytechnique.fr/~maks//"> Maks Ovsjanikov</a><br>
-          <em>CVPR</em>, 2020 <strong>Best Paper Award Nominee</strong><br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Donati_Deep_Geometric_Functional_Maps_Robust_Feature_Learning_for_Shape_Correspondence_CVPR_2020_paper.html">arxiv</a> /
-            <a href="https://github.com/LIX-shape-analysis/GeomFmaps"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{donati20,
-Title={Deep geometric functional maps: Robust feature learning for shape correspondence},
-Author={Nicolas Donati, Abhishek Sharma and Maks Ovsjanikov},
-Journal={CVPR},
-Year={2020}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
-    </div>
-    <hr>
+<section id="publications">
+  <h2>Selected Publications</h2>
 
-     <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="FMnet_pics_4.pdf" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Roufosse_Unsupervised_Deep_Learning_for_Structured_Shape_Matching_ICCV_2019_paper.pdf"><heading> Unsupervised deep learning for structured shape matching</heading></a><br>
-           <a href="https://scholar.google.com/citations?user=7YsFndgAAAAJ&hl=en/"> Jean-Michel Roufosse</a>, <strong> Abhishek Sharma</strong>, <a href="http://www.lix.polytechnique.fr/~maks//"> Maks Ovsjanikov</a><br>
-          <em>ICCV</em>, 2019 <strong>Best Paper Award Nominee</strong><br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://openaccess.thecvf.com/content_ICCV_2019/html/Roufosse_Unsupervised_Deep_Learning_for_Structured_Shape_Matching_ICCV_2019_paper.html">arxiv</a> /
-            <a href="https://github.com/LIX-shape-analysis/SURFMNet"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{roufosse19,
-Title={Unsupervised deep learning for structured shape matching},
-Author={Jean-Michel Roufosse, Abhishek Sharma and Maks Ovsjanikov},
-Journal={ICCV},
-Year={2019}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
+  <div class="line">
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/matrix-fmap.svg" alt="Schematic: a sparse matrix M is recovered as X equals Phi C Psi transpose, using row and column graph bases" loading="lazy"></div>
+    <div>
+      <h4><a href="https://arxiv.org/abs/2102.03233">Matrix Decomposition on Graphs: A Functional View</a></h4>
+      <p class="venue">ICASSP, 2022</p>
+      <ul class="links"><li><a href="https://arxiv.org/abs/2102.03233">arXiv</a></li><li><a href="https://github.com/bach-zouk/functional-matrix-completion">Code</a></li></ul>
     </div>
-    <hr>
-        
-   <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="zoom_cat_wolf.png" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://arxiv.org/pdf/1904.07865.pdf"><heading> ZoomOut: Spectral Upsampling for Efficient Shape Correspondence</heading></a><br>
-           <a href="https://sites.google.com/site/melzismn/"> Simone Melzi</a>,<a href="https://ren-jing.com/"> Jing Ren</a>,<a href="https://sites.google.com/site/erodola/"> Emanuele Rodola</a>, <strong> Abhishek Sharma</strong>, <a href="http://www.lix.polytechnique.fr/~maks//"> Maks Ovsjanikov</a><br>
-          <em>Siggraph Asia</em>, 2019 <br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://arxiv.org/abs/1904.07865">arxiv</a> /
-            <a href="https://github.com/llorz/SGA19_zoomOut"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{roufosse19,
-Title={ZoomOut: Spectral Upsampling for Efficient Shape Correspondence},
-Author={Simone Melzi, Jing Ren, Emanuele Rodolà, Abhishek Sharma, Peter Wonka, Maks Ovsjanikov},
-Journal={ICCV},
-Year={2019}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
+  </article>
+  <div class="arrow" aria-hidden="true"><svg viewBox="0 0 44 24" width="44" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h39M32 4l9 8-9 8"/></svg></div>
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/bipert.webp" alt="Diagram of BiPert's two tasks, transfer and identification" loading="lazy"></div>
+    <div>
+      <h4>How Far Can Linear Go? BiPert, a Unified Framework for Single-Cell Perturbation Modelling</h4>
+      <p class="venue">Preprint, 2026</p>
+      <ul class="links"><li><a href="https://github.com/bach-zouk/BiPert">Code</a></li></ul>
     </div>
-    <hr>
-           
- <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="intro.pdf" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://proceedings.neurips.cc/paper/2018/file/3b3dbaf68507998acd6a5a5254ab2d76-Paper.pdf"><heading> <heading> Foreground-Clustering-for-Joint-segmentation-and-Localization</heading></a><br>
-           <strong> Abhishek Sharma</strong> <br>
-          <em>NeurIPS</em>, 2018 <br>
-          
-          <div class="paper" id="matterport">
-            <a href="https://nips.cc/Conferences/2018/Schedule?showEvent=11183">arxiv</a> /
-            <a href="https://github.com/Not-IITian/Foreground-Clustering-for-Joint-segmentation-and-Localization"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('matterport')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{sharma18,
-Title={Foreground-Clustering-for-Joint-segmentation-and-Localization},
-Author={Abhishek Sharma},
-Journal={NeurIPS},
-Year={2018}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
-    </div>
-    <hr>
+  </article>
+  </div>
 
-    <div class="publication">
-      <table width="900" align="center" border="0" cellpadding="0">
-        <td width="20%" valign="top"><img src="method_overview.pdf" alt="" width="120" height="120" style="border-style: none">
-        <td width="75%" valign="top">
-          <p><a href="https://arxiv.org/pdf/1604.03755.pdf"><heading>VConv-DAE: Deep Volumetric Shape Learning Without Object Labels</heading></a><br>
-           <strong> Abhishek Sharma</strong>, Oliver Grau, and Mario Fritz <br>
-          <em>ECCV</em>, 2016<br>
-          
-          <div class="paper" id="3d">
-            <a href="https://arxiv.org/abs/1604.03755">arxiv</a> /
-            <a href="https://github.com/Not-IITian/VCONV-DAE"> Code</a> /
-            <a shape="rect" href="javascript:togglebib('house3D')" class="togglebib">bibtex</a>
-            <pre xml:space="preserve">
-@article{sharma16,
-Author    = {Abhishek Sharma and Oliver Grau and Mario Fritz},
-Title     = {VConv-DAE: Deep Volumetric Shape Learning Without Object Labels},
-Journal   = {ECCV},
-Year      = {2016}}
-            </pre>             
-          </div>
-        </td> 
-        </td>
-      </table>
+  <div class="line">
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/foreground.webp" alt="Pipeline clustering image regions into foreground and background" loading="lazy"></div>
+    <div>
+      <h4><a href="https://proceedings.neurips.cc/paper/2018/file/3b3dbaf68507998acd6a5a5254ab2d76-Paper.pdf">Foreground Clustering for Joint Segmentation and Localization</a></h4>
+      <p class="venue">NeurIPS, 2018</p>
+      <ul class="links"><li><a href="https://nips.cc/Conferences/2018/Schedule?showEvent=11183">Paper</a></li><li><a href="https://github.com/bach-zouk/Foreground-Clustering-for-Joint-segmentation-and-Localization">Code</a></li></ul>
     </div>
-    <hr>             
-  <br>
-  
+  </article>
+  <div class="arrow" aria-hidden="true"><svg viewBox="0 0 44 24" width="44" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h39M32 4l9 8-9 8"/></svg></div>
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/cell-states.svg" alt="Schematic: three cell types resolve into finer cell states" loading="lazy"></div>
+    <div>
+      <h4>From Cell Types to Cell States</h4>
+      <p class="venue">Upcoming preprint</p>
+    </div>
+  </article>
+  </div>
 
-<script xml:space="preserve" language="JavaScript">
-hideallbibs();
-</script>
+  <div class="line">
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/weak-fmaps.webp" alt="Two cat shapes aligned by a predicted correspondence" loading="lazy"></div>
+    <div>
+      <h4><a href="https://arxiv.org/pdf/2009.13339.pdf">Weakly Supervised Deep Functional Maps for Shape Matching</a></h4>
+      <p class="venue">NeurIPS, 2020</p>
+      <ul class="links"><li><a href="https://arxiv.org/abs/2009.13339">arXiv</a></li><li><a href="https://github.com/bach-zouk/Weakly-supervised-Deep-Functional-map">Code</a></li></ul>
+    </div>
+  </article>
+  <div class="arrow" aria-hidden="true"><svg viewBox="0 0 44 24" width="44" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h39M32 4l9 8-9 8"/></svg></div>
+  <article class="pub">
+    <div class="thumb"><img src="assets/img/right-look.webp" alt="A prediction for condition A that lands on condition B instead" loading="lazy"></div>
+    <div>
+      <h4>Right Look, Wrong Destination: What Velocity-Field Perturbation Models Cannot See Yet</h4>
+      <p class="venue">Upcoming preprint</p>
+    </div>
+  </article>
+  </div>
+</section>
 
-          
+<footer>&copy; 2026 Abhishek Sharma</footer>
+</main>
 </body>
 </html>
